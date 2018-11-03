@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd"
+       default-autowire="byName">
+    <!--spring httpInvoker -->
+    <bean name="testServiceImpl" class="com.ctg.test.api.serviceimpl.TestServiceImpl"/>
+    <bean id="testService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service">
+            <ref bean="testServiceImpl"/>
+        </property>
+        <property name="serviceInterface" value="com.ctg.test.api.service.TestService"></property>
+    </bean>
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <!--必须配置order 优先使用SimpleUrlHandler-->
+        <property name="order" value="0"/>
+        <property name="urlMap">
+            <map>
+                <entry key="testService" value-ref="testService"/>
+            </map>
+        </property>
+    </bean>
+</beans>
