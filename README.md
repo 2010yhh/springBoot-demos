@@ -14,3 +14,7 @@ springBoot-demos
 > 3.[springboot-static](https://github.com/2010yhh/springBoot-demos/tree/master/springboot-static)
 >
 > springboot-mybatits，数据库批量操作，事物操作,ecache缓存
+
+> 4.[springboot-redis](https://github.com/2010yhh/springBoot-demos/tree/master/springboot-redis)
+>
+> springboot-整合redis：做缓存，做分布式共享session
