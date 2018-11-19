@@ -18,3 +18,7 @@ springBoot-demos
 > 4.[springboot-redis](https://github.com/2010yhh/springBoot-demos/tree/master/springboot-redis)
 >
 > springboot-整合redis：做缓存，做分布式共享session
+
+> 5[springboot-quartz-cluster](https://github.com/2010yhh/springBoot-demos/tree/master/springboot-quartz-cluster)
+>
+> springboot-整合quartz：做分布式定时任务
