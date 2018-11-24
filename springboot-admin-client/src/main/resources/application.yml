@@ -1,0 +1,22 @@
+#基本信息
+server:
+    port: 8081
+    context-path: /web1
+#springboot-admin监控的server地址
+spring:
+    boot:
+        admin:
+           client:
+              prefer-ip: true  #解决window下无法识别主机名的问题
+           url: http://localhost:8080/admin-web   #服务端的地址
+#开启监控访问权限
+management:
+     security:
+        enabled: false
+#显示版本信息
+info:
+   app:
+       name: "@project.name@"  #从pom.xml中获取,pom.xml中需build中加入插件spring-boot-maven-plugin
+       description: "@project.description@" 
+       version: "@project.version@"
+       spring-boot-version: "@project.version@"

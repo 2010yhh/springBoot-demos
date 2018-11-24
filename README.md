@@ -24,3 +24,7 @@ springBoot-demos
 > 6.[springboot-shiro](https://github.com/2010yhh/springBoot-demos/tree/master/springboot-shiro)
 >
 > springboot-整合shiro和vue的验证登录和权限的demo
+
+> 6.[springboot-admin](https://github.com/2010yhh/springBoot-demos/tree/master/springboot-shiro)
+>
+> springboot-admin:性能指标监控
