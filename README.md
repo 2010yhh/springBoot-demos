@@ -25,6 +25,10 @@ springBoot-demos
 >
 > springboot-整合shiro和vue的验证登录和权限的demo
 
-> 6.[springboot-admin](https://github.com/2010yhh/springBoot-demos/tree/master/springboot-shiro)
+> 6.[springboot-admin](https://github.com/2010yhh/springBoot-demos/tree/master/springboot-admin-server)
 >
 > springboot-admin:性能指标监控
+
+> 6.[springboot-html](https://github.com/2010yhh/springBoot-demos/tree/master/springboot-html)
+>
+> springboot-防止sql注入，xss攻击，cros攻击
