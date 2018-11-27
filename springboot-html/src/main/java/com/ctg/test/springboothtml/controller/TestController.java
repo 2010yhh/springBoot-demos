@@ -22,9 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *http://localhost:8090
- *http://localhost:8090/test
- *静态资源：http://localhost:8090/static/img/1.jpg
+ * 测试sql,xss
  */
 @Controller
 @EnableAutoConfiguration

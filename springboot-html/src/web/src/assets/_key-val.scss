@@ -1,0 +1,19 @@
+.key-val {
+    margin-top: 16px;
+    .item {
+        padding-bottom: 6px;
+    }
+    .key,
+    .val {
+        display: inline-block;
+    }
+    .key {
+        position: relative;
+        padding-right: 6px;
+        &:after {
+            position: absolute;
+            content: ':';
+            right: 0;
+        }
+    }
+}

@@ -9,12 +9,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.net.InetAddress;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- *http://localhost:8090
- *http://localhost:8090/test
- *静态资源：http://localhost:8090/static/img/1.jpg
+ * 启动3个后台进程，端口号分别为：8080,8090,8100，nginx端端口号设置为：8060,8070
+ *http://localhost:8080/webapp1
+ *http://localhost:8080/webapp1/test
+ *静态资源：http://localhost:8080/webapp1/static/img/1.jpg
+ * 测试nginx静态资源和nginx负载均衡：
+ * http://192.168.159.142:8060/webapp1
+ * 或者直接访问：
+ * http://192.168.159.142:8060/webapp1/test/static/img/1.jpg
+ * http://192.168.159.142:8060/webapp1/test
+ * 测试nginx不同端口，一个端口不同上下文
+ * http://192.168.159.142:8070/webapp2/
+ * http://192.168.159.142:8070/webapp2/test
+ * 测试nginx一个端口不同上下文
+ * http://192.168.159.142:8070/webapp2/
+ * http://192.168.159.142:8070/webapp2/test
+ * http://192.168.159.142:8070/webapp3/
+ * http://192.168.159.142:8070/webapp3/test
+ *
  */
 @Controller
 @EnableAutoConfiguration
@@ -33,7 +51,9 @@ public class IndexController {
 	}
 	@RequestMapping("/test")
 	@ResponseBody
-	String test(HttpServletRequest request) {
+	public  Object test(HttpServletRequest request, HttpServletResponse response) {
+		Map<String,Object> result=new HashMap<>();
+		result.put("code","200");
 		String ip="";
 		try {
 			InetAddress inetAddress=ipUtil.getLocalHostLANAddress();
@@ -41,6 +61,7 @@ public class IndexController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "From "+ip+":"+env.getProperty("server.port");
+		result.put("data","url:"+request.getRequestURL()+",ip: "+ip+",port:"+env.getProperty("server.port"));
+         return result;
 	}
 }
