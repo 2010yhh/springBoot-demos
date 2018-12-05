@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * durid web监控台：http://localhost:8090/druid/index.html
+ * web: http://localhost:8090
+ *   http://localhost:8090/#/login
  */
 @SpringBootApplication
 @EnableTransactionManagement

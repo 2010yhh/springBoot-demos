@@ -10,7 +10,20 @@
 
     <name>springboot-shiro</name>
     <description>Demo project for Spring Boot</description>
-
+    <!--Kaptcha并没有上传到中央仓库，可以从Sonatype Forge仓库获得该构件-->
+    <repositories>
+        <repository>
+            <id>sonatype-forge</id>
+            <name>Sonatype Forge</name>
+            <url>http://repository.sonatype.org/content/groups/forge/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -25,6 +38,12 @@
     </properties>
 
     <dependencies>
+        <!--Kaptcha是用于生成验证码的开源类库-->
+        <dependency>
+            <groupId>com.github.penggle</groupId>
+            <artifactId>kaptcha</artifactId>
+            <version>2.3.2</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -138,6 +157,7 @@
             <artifactId>javassist</artifactId>
             <version>3.22.0-GA</version>
         </dependency>
+
     </dependencies>
 
     <build>

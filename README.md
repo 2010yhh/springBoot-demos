@@ -24,6 +24,8 @@ springBoot-demos
 > 6.springboot-shiro
 >
 > [springboot-整合shiro和vue的验证登录和权限的demo](https://blog.csdn.net/yhhyhhyhhyhh/article/details/84262689)
+>
+> [springboot-整合vue和图片验证码](https://blog.csdn.net/yhhyhhyhhyhh/article/details/84846033)
 
 > 7.springboot-admin
 >
@@ -41,4 +43,5 @@ springBoot-demos
 
 > 10.springboot-cros
 >
-> 
+> [springboot-整合Vue，跨域，cookie跨域，session共享demo](https://blog.csdn.net/yhhyhhyhhyhh/article/details/84666512)
+
