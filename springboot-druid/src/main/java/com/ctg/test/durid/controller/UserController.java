@@ -8,8 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,7 +16,7 @@ import java.util.Map;
 
 
 /**
- * @Description:
+ * @Description:测试durid连接池
  * @Author: yanhonghai
  * @Date: 2018/9/17 1:00
  */
@@ -28,19 +27,62 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    /**
-     * http://localhost:8090/user/testDb
-     * @return
-     */
-    @RequestMapping(value = {"/testDb"})
+
+    @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
-    public Object testDb() {
+    public Object addUser(@RequestBody User user) {
         Map<String, Object> result = new HashMap<>();
         try {
-            List<User> users = userService.findAll();
+            userService.addUser(user);
             result.put("code", "200");
             result.put("msg", "success");
-            result.put("result", users);
+        } catch (Exception e) {
+            result.put("code", "201");
+            result.put("msg", ExceptionUtils.getFullStackTrace(e));
+        }
+        return result;
+    }
+    @RequestMapping(method = RequestMethod.DELETE)
+    @ResponseBody
+    public Object deleteUser(@RequestParam int id) {
+        Map<String, Object> result = new HashMap<>();
+        try {
+            userService.deleteUser(id);
+            result.put("code", "200");
+            result.put("msg", "success");
+        } catch (Exception e) {
+            result.put("code", "201");
+            result.put("msg", ExceptionUtils.getFullStackTrace(e));
+        }
+        return result;
+    }
+    /**
+     * http://localhost:8090/user?userName=admin
+     * @return
+     */
+    @RequestMapping(method = RequestMethod.GET)
+    @ResponseBody
+    public Object getUser(@RequestParam String userName) {
+        Map<String, Object> result = new HashMap<>();
+        try {
+            User user = userService.findByUserName(userName);
+            result.put("code", "200");
+            result.put("msg", "success");
+            result.put("result", user);
+        } catch (Exception e) {
+            result.put("code", "201");
+            result.put("msg", ExceptionUtils.getFullStackTrace(e));
+        }
+        return result;
+    }
+    @RequestMapping(method = RequestMethod.PUT)
+    @ResponseBody
+    public Object updateUser(@RequestBody User user) {
+        Map<String, Object> result = new HashMap<>();
+        try {
+            userService.updateUser(user);
+            result.put("code", "200");
+            result.put("msg", "success");
         } catch (Exception e) {
             result.put("code", "201");
             result.put("msg", ExceptionUtils.getFullStackTrace(e));
