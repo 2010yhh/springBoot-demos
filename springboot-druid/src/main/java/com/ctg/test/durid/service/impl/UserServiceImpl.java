@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,19 +21,20 @@ import java.util.List;
  * @Date: 2018/9/17 0:54
  */
 @Service
-
 public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
     @Override
     public User findByUserName(String userName) {
+        System.out.print(System.currentTimeMillis()+":execute findByUserName,userName:"+userName);
         UserExample example=new UserExample();
         example.createCriteria().andUserNameEqualTo(userName);
-        List<User> users=userMapper.selectByExample(example);
+        List<User> users=new ArrayList<>();
+        users=userMapper.selectByExample(example);
         if(!CollectionUtils.isEmpty(users)){
             return users.get(0);
         }
-        return null;
+        return new User();
     }
     @Override
     public List<User> findAll() {

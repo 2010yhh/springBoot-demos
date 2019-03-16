@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
+ * 先在navicat等db工具中手动执行resources下的sql建表
  * durid web监控台：http://localhost:8090/druid/index.html(root/root)
  */
 @SpringBootApplication
