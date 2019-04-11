@@ -48,3 +48,8 @@ springBoot-demos
 > 11.springboot-elk
 >
 > [springboot集成elk日志收集示例](https://blog.csdn.net/yhhyhhyhhyhh/article/details/88905371)
+
+> 12.springboot配置-集成nacos
+>
+> [springboot配置-集成nacos](https://blog.csdn.net/yhhyhhyhhyhh/article/details/89207689)
+
