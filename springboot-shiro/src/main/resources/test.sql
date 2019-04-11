@@ -102,7 +102,6 @@ CREATE TABLE `sys_user` (
 INSERT INTO `sys_user` VALUES ('238', 'admin', 'user104_RealName', '038bdaf98f2037b31f1e75b5b4c9b26e', '1111111', null, '111', '2018-10-09 18:50:03', '2018-09-28 19:28:06', null);
 INSERT INTO `sys_user` VALUES ('239', 'user1', 'user1_RealName', 'd6e75e048d00e4d0378d904bfdf81870', null, null, null, '2018-10-23 11:35:55', '2018-10-23 11:35:55', null);
 INSERT INTO `sys_user` VALUES ('240', 'user2', 'user2_RealName', '2fec513e98ba7033049be21d92f55fa3', null, null, null, '2018-10-23 14:29:51', '2018-10-23 14:29:51', null);
-INSERT INTO `sys_user` VALUES ('241', 'yhh', 'yhh', 'e22fdab996d9aca5be5ba6ae4f361255', null, null, null, '2018-11-13 22:37:08', '2018-11-13 22:37:08', null);
 
 -- ----------------------------
 -- Table structure for sys_user_role
