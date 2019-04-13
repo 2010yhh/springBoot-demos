@@ -2,6 +2,7 @@ package com.ctg.test.springbootconfig.controller;
 
 import com.ctg.test.springbootconfig.UserInfo;
 import com.ctg.test.springbootconfig.UserInfo2;
+import com.ctg.test.springbootconfig.xml.TestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,10 @@ public class TestController {
     private UserInfo userInfo ;
     @Autowired
     private UserInfo2 userInfo2 ;
+
+    @Autowired
+    TestService testService;
+
     @RequestMapping(value = "/test")
     @ResponseBody
     public Object test(){
@@ -47,4 +52,12 @@ public class TestController {
         map.put("Bean读取指定配置路径：",userInfo2.getUserName()+":"+userInfo2.getPassWord());
         return map;
 }
+    @RequestMapping(value = "/test2")
+    @ResponseBody
+    public Object test2(){
+        Map<String,Object>map =new HashMap<>();
+        map.put("code",200);
+        map.put("xml配置bean：",testService.test());
+        return map;
+    }
 }
