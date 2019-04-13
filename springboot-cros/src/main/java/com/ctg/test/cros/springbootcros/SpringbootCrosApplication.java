@@ -7,7 +7,6 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @SpringBootApplication
 @ServletComponentScan
 public class SpringbootCrosApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(SpringbootCrosApplication.class, args);
     }
