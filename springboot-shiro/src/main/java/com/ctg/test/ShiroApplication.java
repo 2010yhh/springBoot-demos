@@ -16,7 +16,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @MapperScan("com.ctg.test.mapper")//配置mybatis包扫描
 @EnableCaching
 public class ShiroApplication {
-
     public static void main(String[] args) {
 
         SpringApplication.run(ShiroApplication.class, args);
