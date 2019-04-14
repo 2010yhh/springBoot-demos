@@ -1,0 +1,8 @@
+#定义自动配置的属性
+com:
+  ctg:
+    test:
+      user:
+        user-name: zyq
+        pass-word: 123456
+        enabled: true
