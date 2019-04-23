@@ -28,7 +28,7 @@ CREATE TABLE `cas_user` (
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
--- Records of cas_user
+-- Records of cas_user admin 123456
 -- ----------------------------
 INSERT INTO `cas_user` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e');
 INSERT INTO `cas_user` VALUES ('2', 'user1', 'e10adc3949ba59abbe56e057f20f883e');

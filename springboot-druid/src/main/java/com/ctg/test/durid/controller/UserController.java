@@ -42,6 +42,23 @@ public class UserController {
         }
         return result;
     }
+    @RequestMapping(value = "/add2",method = RequestMethod.POST)
+    @ResponseBody
+    public Object addUser2(@RequestParam String userName,@RequestParam String passWord) {
+        Map<String, Object> result = new HashMap<>();
+        try {
+            User user=new User();
+            user.setUserName(userName);
+            user.setPassWord(passWord);
+            userService.addUser(user);
+            result.put("code", "200");
+            result.put("msg", "success");
+        } catch (Exception e) {
+            result.put("code", "201");
+            result.put("msg", ExceptionUtils.getFullStackTrace(e));
+        }
+        return result;
+    }
     @RequestMapping(method = RequestMethod.DELETE)
     @ResponseBody
     public Object deleteUser(@RequestParam int id) {
@@ -62,7 +79,7 @@ public class UserController {
      */
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public Object getUser(@RequestParam String userName) {
+    public Object getUser(@RequestParam String userName,@RequestParam String passWord) {
         Map<String, Object> result = new HashMap<>();
         try {
             User user = userService.findByUserName(userName);
@@ -80,6 +97,24 @@ public class UserController {
     public Object updateUser(@RequestBody User user) {
         Map<String, Object> result = new HashMap<>();
         try {
+            userService.updateUser(user);
+            result.put("code", "200");
+            result.put("msg", "success");
+        } catch (Exception e) {
+            result.put("code", "201");
+            result.put("msg", ExceptionUtils.getFullStackTrace(e));
+        }
+        return result;
+    }
+    @RequestMapping(value = "/update2",method = RequestMethod.PUT)
+    @ResponseBody
+    public Object updateUser2(@RequestParam Integer id,@RequestParam String userName,@RequestParam String passWord) {
+        Map<String, Object> result = new HashMap<>();
+        try {
+            User user=new User();
+            user.setId(id);
+            user.setUserName(userName);
+            user.setPassWord(passWord);
             userService.updateUser(user);
             result.put("code", "200");
             result.put("msg", "success");
