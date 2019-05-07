@@ -1,0 +1,15 @@
+@mixin sexy-header($tag) {
+    padding: 8px 0;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    position: relative;
+    height: 40px;
+    > #{$tag} {
+        padding: 0 16px 6px 0;
+        position: absolute;
+        display: inline-block;
+        color: #666;
+        font-weight: normal;
+        border-bottom: 2px solid #b2d3f4;
+    }
+}

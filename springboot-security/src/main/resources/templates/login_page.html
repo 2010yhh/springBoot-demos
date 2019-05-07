@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第一个HTML页面</title>
+</head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+自定义表单验证:
+<!--要与.loginProcessingUrl("/myloginForm")相对应-->
+<form name="f" action="/myloginForm" method="post">
+    <br/>
+    用户名:
+    <input type="text" name="userName" placeholder="name"><br/>
+    密码:
+    <input type="password" name="passWord" placeholder="password"><br/>
+    <input type="text" name="imageCode">
+    <img src="/createImageCode"><br/>
+    <input type="checkbox" name="rememberMe"/>下次自动登录<br/>
+    <input name="submit" type="submit" value="提交">
+</form>
+<form action="/mylogout" method="post">
+    <input type="submit" class="btn btn-primary" value="注销"/><!-- 5 -->
+</form>
+</body>
+</html>

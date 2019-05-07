@@ -1,0 +1,36 @@
+.table-tree {
+    &--row {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 12px;
+        > li {
+            display: table-cell;
+            padding: 8px 0;
+            border: 1px solid #ebeef5;
+            white-space: normal;
+            word-break: break-all;
+            line-height: 23px;
+            vertical-align: middle;
+            > .cell {
+                padding: 0 10px;
+            }
+        }
+        .caret {
+            cursor: pointer;
+        }
+    }
+    &--body {
+        .table-tree {
+            &--row {
+                &:hover {
+                    background-color: #f8f9fb;
+                }
+                > li {
+                    border-top: 0;
+                }
+            }
+        }
+    }
+}
