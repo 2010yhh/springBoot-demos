@@ -57,3 +57,18 @@ springBoot-demos
 >
 > [springboot配置-集成apollo](https://blog.csdn.net/yhhyhhyhhyhh/article/details/89213041)
 
+> 14.springboot自动配置自定义的Starter
+>
+> [springboot自动配置自定义的Starter](https://blog.csdn.net/yhhyhhyhhyhh/article/details/89294026)
+
+> 15.springboot整合vue实现上传下载文件
+>
+> [springboot整合vue实现上传下载文件](https://blog.csdn.net/yhhyhhyhhyhh/article/details/89888953)
+
+> 16.springboot整合security和vue
+>
+> [springboot整合security和vue](https://blog.csdn.net/yhhyhhyhhyhh/article/details/89927440)
+
+> 17.springboot整合oauth2.0
+>
+> [springboot整合oauth2.0](https://blog.csdn.net/yhhyhhyhhyhh/article/details/89944210)
