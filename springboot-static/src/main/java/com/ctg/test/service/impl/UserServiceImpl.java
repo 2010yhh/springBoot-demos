@@ -4,6 +4,9 @@ import com.ctg.test.mapper.UserMapper;
 import com.ctg.test.model.User;
 import com.ctg.test.model.UserExample;
 import com.ctg.test.service.UserService;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
@@ -54,6 +57,27 @@ public class UserServiceImpl implements UserService {
         UserExample example = new UserExample();
         example.createCriteria().andUserIdEqualTo(userId);
         return userMapper.selectByExample(example);
+    }
+
+    /**
+     * 测试pageHelper分页查询
+     * @return
+     */
+    @Override
+    public PageInfo  findAll(int pageNum,int pageSize) {
+        //当第三个参数没有或者为true的时候，进行count查询
+        //应避免多线程不按照，判断参数或者按照下面的释放线程中的ThreadLocal变量
+        List<User> users;
+        try {
+            PageHelper.startPage(pageNum, pageSize);
+            users = userMapper.selectByExample(new UserExample());
+        } finally {
+            PageHelper.clearPage();
+        }
+        //Page<User>page=(Page<User>)users;
+        PageInfo pageInfo = new PageInfo(users);
+       return pageInfo;
+       // return page;
     }
 
     @CachePut(key = "#user.userId")

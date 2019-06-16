@@ -1,6 +1,8 @@
 package com.ctg.test.service;
 
 import com.ctg.test.model.User;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -13,7 +15,7 @@ public interface UserService {
     public List<User> findByUserName(String userName, String passWord);
 
     public List<User> findByUserId(int userId);
-
+    public PageInfo findAll(int pageNum, int pageSize);
     public void addUser(User user);
 
     public void updateUser(User user);

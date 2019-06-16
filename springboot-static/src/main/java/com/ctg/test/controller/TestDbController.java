@@ -1,7 +1,10 @@
 package com.ctg.test.controller;
 
 import com.ctg.test.model.User;
+import com.ctg.test.model.UserExample;
 import com.ctg.test.service.UserService;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
@@ -17,6 +20,8 @@ import java.util.Map;
 
 /**
  *http://localhost:8090/login?userName=yhh&passWord=yhh
+ * http://localhost:8090/all
+ * http://localhost:8090/all?pageNum=4&pageSize=3
  */
 @Controller
 public class TestDbController {
@@ -140,5 +145,11 @@ public class TestDbController {
 		}
 		userService.batchDeleteUser(ids);
 	}
-
+	@RequestMapping(value = {"/all"},method={RequestMethod.GET})
+	@ResponseBody
+	public Object findAll(@RequestParam(defaultValue = "1")int pageNum,
+						  @RequestParam(defaultValue = "5")int pageSize) {
+		PageInfo users= userService.findAll(pageNum,pageSize);
+		return users;
+	}
 }
