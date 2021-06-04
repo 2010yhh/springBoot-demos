@@ -50,7 +50,7 @@
         <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
-            <version>1.10</version>
+            <version>1.26</version>
         </dependency>
 <!--管理界面中与JMX-beans进行交互-->
         <dependency>
